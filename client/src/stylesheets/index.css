@@ -1,0 +1,446 @@
+:root {
+  --phreddit-orange: rgb(255, 68, 0);
+  --light-gray: rgb(235, 235, 235);
+  --mid-gray: rgb(215, 215, 215);
+  --border-gray: rgb(190, 190, 190);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+}
+
+
+.app-shell {
+  height: 100%;
+}
+
+.header {
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid black;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 14px 20px;
+}
+
+.title-link {
+  background: none;
+  color: var(--phreddit-orange);
+  cursor: pointer;
+  font-size: 1.9rem;
+  font-weight: 700;
+  padding: 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+#search-bar {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+#search-bar input {
+  border: 1px solid var(--border-gray);
+  border-radius: 999px;
+  max-width: 650px;
+  padding: 12px 16px;
+  width: min(100%, 650px);
+}
+
+.layout {
+  display: flex;
+  height: calc(100% - 73px);
+}
+
+.leftnav {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 16px;
+  width: 260px;
+}
+
+.homepage {
+  border-left: 1px solid black;
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+}
+
+.sidebar-divider {
+  border-top: 1px solid black;
+  margin: 4px 0 2px;
+  width: 100%;
+}
+
+#com {
+  margin: 0;
+  padding-top: 2px;
+}
+
+#community-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.banner-button,
+.nav-button,
+.sort-button,
+.reply-btn,
+.action-button {
+  background-color: var(--mid-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 999px;
+  color: black;
+  cursor: pointer;
+  padding: 10px 14px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.banner-button:hover,
+.nav-button:hover,
+.sort-button:hover,
+.reply-btn:hover,
+.action-button:hover,
+.banner-button.selected,
+.nav-button.selected,
+.sort-button.selected,
+.reply-btn.selected,
+.action-button.selected {
+  background-color: var(--phreddit-orange);
+  color: white;
+}
+
+.nav-link,
+.community-link {
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  color: black;
+  cursor: pointer;
+  display: block;
+  padding: 10px 12px;
+  text-align: left;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover,
+.community-link:hover,
+.nav-link.selected,
+.community-link.selected {
+  background-color: var(--phreddit-orange);
+  color: white;
+}
+
+.homepage-header {
+  align-items: flex-start;
+  border-bottom: 1px solid black;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#AllPosts {
+  color: var(--phreddit-orange);
+  margin: 0 0 6px;
+}
+
+#post-count {
+  margin: 0 0 14px;
+}
+
+.search-empty-hint {
+  color: rgb(80, 80, 80);
+  margin: 0 0 12px;
+}
+
+.post {
+  background: none;
+  cursor: pointer;
+  display: block;
+  padding: 12px 0;
+  text-align: left;
+  width: 100%;
+}
+
+.post-listing {
+  border-bottom: 1px dotted black;
+}
+
+.post-listing:last-child {
+  border-bottom: none;
+}
+
+.post-meta,
+.post-username,
+.post-stats,
+.comment-meta,
+.community-description,
+.community-created,
+.community-posts-members {
+  font-size: 0.95rem;
+}
+
+.community-meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.community-meta-block .community-created,
+.community-meta-block .community-posts-members {
+  margin: 0;
+}
+
+.community-posts-members {
+  margin: 0;
+}
+
+.post-title,
+.post-page-title {
+  margin: 8px 0;
+}
+
+.post-flair {
+  background-color: rgb(244, 244, 244);
+  border-radius: 14px;
+  display: inline-block;
+  margin: 4px 0 8px;
+  padding: 4px 10px;
+}
+
+.post-preview,
+.post-content-full,
+.comment-content {
+  line-height: 1.45;
+  margin: 8px 0;
+}
+
+.post-content-full,
+.comment-content,
+.community-description {
+  overflow-wrap: anywhere;
+}
+
+.count-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.post-page hr {
+  border: none;
+  border-top: 1px solid black;
+  margin: 16px 0;
+}
+
+.comment {
+  border-left: 1px solid #cccccc;
+  margin: 12px 0;
+  padding-left: 12px;
+}
+
+.reply-btn {
+  margin-top: 4px;
+  padding: 6px 12px;
+}
+
+.form-page {
+  max-width: 820px;
+}
+
+.form-page h2 {
+  color: var(--phreddit-orange);
+  margin-top: 0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.required {
+  color: var(--phreddit-orange);
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  min-height: 1.1em;
+}
+
+.content-rich a,
+.post-content-full a,
+.comment-content a {
+  color: #0645ad;
+  text-decoration: underline;
+}
+
+button:disabled,
+button:disabled:hover {
+  background-color: var(--mid-gray);
+  color: rgb(100, 100, 100);
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.welcome-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+  padding: 60px 20px;
+}
+
+.welcome-page h1 {
+  color: var(--phreddit-orange);
+  font-size: 3rem;
+  margin: 0;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+  width: 100%;
+}
+
+.row-actions {
+  flex-direction: row;
+}
+
+.auth-form {
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 520px;
+}
+
+.auth-form label,
+.form-page label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.auth-form input,
+.form-page input,
+.form-page textarea,
+.form-page select {
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
+  display: block;
+  margin-top: 6px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.sublist-divider {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  font-weight: 700;
+  margin: 8px 0;
+  padding: 10px 0;
+}
+
+.vote-actions,
+.profile-tabs,
+.profile-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.action-button.small {
+  padding: 6px 10px;
+}
+
+.action-button.danger,
+.action-button.danger:hover {
+  background-color: rgb(170, 0, 0);
+  color: white;
+  margin-left: 8px;
+}
+
+.system-error {
+  border: 1px solid red;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 10px;
+}
+
+.text-link {
+  background: none;
+  color: #0645ad;
+  cursor: pointer;
+  padding: 4px 0;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.text-link.block {
+  display: block;
+  width: 100%;
+}
+
+.profile-list {
+  margin-top: 14px;
+}
